@@ -27,17 +27,19 @@ public class CapsuleService {
             throw new RuntimeException("Timeline doesn't exist");
         }
         Timeline timeline = tlOpt.get();
-        Capsule newCapsule = new Capsule(name, timestamp, description, timeline);
+        Capsule newCapsule = new Capsule(name, timestamp, description, timeline, userId);
         newCapsule = capsuleRepository.save(newCapsule);
         return newCapsule;
     }
 
     public List<Capsule> findAllCapsules(){
+
         return capsuleRepository.findAll();
     }
 
     // find all  by user
     public List<Capsule> findCapsulesByUserId(Integer userId){
+
         return capsuleRepository.findAllByUserId(userId);
     }
 

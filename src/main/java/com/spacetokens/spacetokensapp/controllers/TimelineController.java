@@ -19,13 +19,13 @@ public class TimelineController {
 
     private final TimelineService timelineService;
 
-    @PostMapping("/new")
-    public ResponseEntity<?> createNewTimeline(@RequestParam Integer userId){
-        timelineService.createNewTimeline(userId);
-        return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+//    @PostMapping("/new")
+//    public ResponseEntity<?> createNewTimeline(@RequestParam Integer userId){
+//        timelineService.createNewTimeline(userId);
+//        return new ResponseEntity<>(HttpStatus.CREATED);
+//    }
 
-    @GetMapping("/allTimelines")
+    @GetMapping("/getTimeline")
     public ResponseEntity<Timeline> getUserTimeline(@RequestParam Integer userId){
         Timeline timeline = timelineService.getTimeline(userId);
         System.out.println(timeline);

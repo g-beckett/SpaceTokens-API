@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,14 +20,16 @@ public class Timeline {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer userId;
-    @OneToMany(mappedBy = "timeline", cascade=CascadeType.ALL)
+    @OneToOne(mappedBy = "timeline", cascade=CascadeType.ALL)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
     @JsonManagedReference
     @EqualsAndHashCode.Exclude
     private List<Capsule> capsules;
 
-    public Timeline(Integer userId) {
-        this.userId = userId;
-        this.capsules = new ArrayList<>();
-    }
+//    public Timeline(Integer userId) {
+//        this.userId = userId;
+//        this.capsules = new ArrayList<>();
+//    }
 
 }

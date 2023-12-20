@@ -3,7 +3,6 @@ package com.spacetokens.spacetokensapp.repositories;
 import com.spacetokens.spacetokensapp.entities.Capsule;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 //sql stuff

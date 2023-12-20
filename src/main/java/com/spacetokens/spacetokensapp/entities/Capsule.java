@@ -31,13 +31,13 @@ public class Capsule {
     private Integer userId;
 
     // will have an id, name of capsule, start date
-    public Capsule (String capsuleName, Timestamp unlockDate, String description, Timeline timeline) {
+    public Capsule (String capsuleName, Timestamp unlockDate, String description, Timeline timeline, Integer userId) {
 
         this.capsuleName = capsuleName;
         this.startDate = Timestamp.valueOf(LocalDateTime.now());
         this.unlockDate = unlockDate;
         this.description = description;
-        this.userId = 333;
+        this.userId = userId;
         this.timeline = timeline;
     }
 }
